@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <style>
+            .newsletter{
+                min-height: 210px;
+                overflow: hidden;
+                margin-top: -25px;
+                padding: 60px 15px 40px 45px;
+                background: url(http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/newsletter.png);
+                background-repeat: no-repeat;
+                background-position: top center;    
+            }
+            
+            input[type=email]{
+                background: #6f0f02;
+                color: rgba(255,255,255,0.7);
+                width: 225px;
+            }
+            input[type=submit]{
+                padding: 8px 10px;
+                line-height: 13px;
+                margin-left: -5px;
+                background: #e4c48b;
+                color: #971504;
+                text-transform: uppercase;
+            }
+            ::placeholder { 
+              color: rgba(255,255,255,0.7);
+              opacity: 1;
+            }
+            
+            .pale{
+                background:#e2cba7;
+            }
+            .menu li,.social-links li{
+                margin-bottom: 0.5rem;
+                list-style-type: none;
+            }
+            a{
+                color:#fff;
+            }
+
+            .social-links li a {
+                display: block;
+                height: 32px;
+                color:#fff;
+                margin-left: 10px;
+                padding-left: 42px;
+                line-height: 30px;
+                text-transform: capitalize;
+                background: url(http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/sprite-social-icons.png) no-repeat;
+            }
+
+            .facebook a {
+                background-position: 0 0;
+            }
+
+            .twitter a {
+                background-position: 0 -52px !important;
+            }
+            .gplus a {
+                background-position: 0 -104px !important;
+            }
+            .rss a {
+                background-position: 0 -675px !important;
+            }
+            .header{
+                background: #801101;
+            }
+            .btn-custom{
+                padding: 0 30px;
+                height: 100%;
+                line-height: 60px;
+                background: #5c0d02;
+                color: #d9968c !important;
+                font-size: 14px;
+                text-decoration: none;
+            }
+            .btn-custom1{
+                width: 195px;
+                height: 100%;
+                line-height: 48px;
+                background: #4f0b01;
+                color: #d9968c !important;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .nav > li a:hover {
+                color: #d9968c;
+            }
+            .bg-danger{
+                background: #cb1602 !important;
+            }
+            
+            .logo img{
+                padding: 1rem 0;
+            }
+
+            .main-menu {
+                float: right;
+                position: relative;
+                margin-top: 12px;
+                background: url(http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/main-menu.png) repeat;
+            }
+            .main-menu ul {
+    position: relative;
+    float: left;
+    list-style: none;
+    min-width: 250px;
+    max-width: 725px;
+    margin: 0;
+    padding: 15px 20px;
+    z-index: 100;
+}
+.main-menu ul > li {
+    float: left;
+    position: relative;
+    margin: 0;
+    background: none;
+    border-radius: 17px;
+}
+.main-menu ul > li > a {
+    display: block;
+    padding: 0 15px;
+    height: 34px;
+    line-height: 34px;
+    color: #44120b;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.main-menu ul > li > a:hover {
+    color: #b61905;
+}
+body:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 175px;
+    right: 80px;
+    width: 230px;
+    height: 130px;
+    background: url(http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/header-bg-collage.png) 0 0 no-repeat;
+}
+body{
+    background-color: #f7e8d0;
+}
+        </style>
+    </head>
+    <body>
+        <section class="header">
+            <div class="container d-flex justify-content-between align-items-center">
+                
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Our Menu</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                      </li>
+                    </ul>
+                    <div class="cart-search d-flex">
+                        <div class="cart">
+                            <a class="btn btn-custom">0.00 (0 Products)</a>
+                        </div>
+                        <div class="search">
+                            <a class="btn btn-custom1"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section class="bg-danger">
+            <div class="container ">
+                <a href="#" class="logo" style="top:px;left: px;">
+                    <img src="http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/logo.png" alt="your logo">
+                </a>
+                <nav class="main-menu">
+                            <ul id="menu-main-menu-cooker" class=""><li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="#">Our Menu</a></li>
+        <li id="menu-item-365" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-365"><a href="#">Drinks</a>
+        <ul class="sub-menu" style="display: none;">
+            <li id="menu-item-366" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-366"><a href="#">Hot Drinks</a></li>
+            <li id="menu-item-367" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-367"><a href="#">Cocktails</a></li>
+        </ul>
+        </li>
+        <li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-371"><a href="#">Sandwiches</a></li>
+        <li id="menu-item-368" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-368"><a href="#">Meals</a>
+        <ul class="sub-menu" style="display: none;">
+            <li id="menu-item-369" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-369"><a href="#">Main</a></li>
+            <li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-372"><a href="#/">Soup</a></li>
+            <li id="menu-item-370" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-370"><a href="#/">Pasta</a></li>
+            <li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-373"><a href="#">Pizza</a></li>
+        </ul>
+        </li>
+        <li id="menu-item-376" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-376"><a href="#">Salads</a></li>
+        <li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-374"><a href="#">Desserts</a></li>
+        </ul>                   <div id="lava-elm" style="opacity: 100; top: 15px; left: 21px; width: 106px; height: 34px;"></div>
+                </nav>
+            </div>
+        </section>
+<div class="container">
+    <br>
+    <p><span class="text-danger"> Home ></span> Contact Us</p>
+    <br>
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-7">
+                <div class="form-app">
+                    <div class="row">
+                        <div class="col-4">
+                            Your Name
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="pale border-white form-control w-100">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            Your Email
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="pale border-white form-control w-100">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            Subject
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="pale border-white form-control w-100">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            Message
+                        </div>
+                        <div class="col-8">
+                            <textarea class="pale border-white form-control w-100"> </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <h2>Address</h2>
+                <p class="h5">Cooker Online Food</p>
+                <p class="h5">101 Timberlachen Circle, Suite 202</p>
+                <p class="h5">Lake Mary, FL 32746</p>
+                
+                <br>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan lectus vel dolor dignissim laoreet. Nulla sagittis malesuada eros in imperdiet. Duis consequat volutpat dictum.</p>
+                
+                <p>Nulla sagittis malesuada eros in imperdiet. Duis consequat volutpdictum. Suspendisse accumsan lectus vel dolor dignissim laoreet.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="maps-location">
+    <h3>Find Us here</h3>
+    <p><iframe src="https://www.google.com/maps/d/u/0/embed?mid=znVUlBFgeMZY.kSoPmB03pjVc" width="100%" height="400"></iframe></p>
+</div>
+</div>  
+                    
+    <footer class="bg-danger text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-5 text-left">
+                    <p class="font-weight-bold">NEWSLETTER</p>
+                    <div class="newsletter">
+                    <p>Sign-up to our newsletter for a weekly doze of awesomeness, delivered directly to your inbox:</p>
+                        <input type="email" id="mc4wp_email" name="EMAIL" placeholder="Your email address" required="">
+                        <input type="submit" value="Sign up">
+                    </div>
+                    
+                    
+                </div>
+                <div class="col">
+                    <p class="font-weight-bold">FAST LINKS</p>
+            <div class="menu-top-menu-container">
+                <ul id="menu-top-menu-1" class="menu">
+                    <li class=""><a href="#">Home</a></li>
+              <li class=""><a href="#">Our Menu</a></li>
+                <li class=""><a href="#">Blog</a></li>
+                    <li class=""><a href="#">Contact us</a></li>
+                  </ul></div>
+                    
+                          
+                </div>
+                <div class="col">
+                    <p class="font-weight-bold">CATEGORIES</p>
+                    <ul class="menu">
+                        <li class=""><a href="#">Desserts</a></li>
+                        <li class=""><a href="#">Drinks</a></li>
+                        <li class=""><a href="#">Meals</a></li>
+                        <li class=""><a href="#">Salads</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <p class="font-weight-bold">FOLLOW US ON...</p>
+                    <ul class="social-links">
+								<li class="facebook"><a href="https://www.facebook.com/dodoweb">Facebook</a></li>
+								<li class="twitter"><a href="TW">Twitter</a></li>
+								<li class="gplus"><a href="gplus">Gplus</a></li>
+								<li class="rss"><a href="#">Rss feed</a></li>
+					</ul>
+                </div>
+            </div>
+            <div class="row align-items-center justify-items-center">
+                <div class="col">
+                    <div class="d-flex align-items-center justify-items-center">
+                    <img width="100px" class="p-3" src="http://tf.freegafo.com/preview/cooker-wp-v3/wp-content/themes/cooker/images/logo.png" />    
+                    <p>Copyright © 2015 Cooker. All rights reserved</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="text-right">Web design: Muskan Kanungo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
